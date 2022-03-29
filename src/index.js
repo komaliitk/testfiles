@@ -1,12 +1,38 @@
-import React from 'react';
+import React  from 'react';
 import ReactDOM from 'react-dom';
+
+// import {BrowserRouter as Router} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import './index.css';
+import Nav from './components/Nav';
 import App from './App';
+import Home from './components/Home';
 import reportWebVitals from './reportWebVitals';
+import Services from './Services';
+import Innovations from './Innovations';
+import Education from './Education';
+import Login from './Login';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+    <Router>
+      <Routes>
+        <Route exact path="/"  element={<Home />} />
+        <Route path="/services"  element={<Services />} />
+        <Route path="/innovations"  element={<Innovations />} />
+        <Route path="/education"  element={<Education />} />
+        <Route path="/login"  element={<Login />} />
+      
+      </Routes>
+    </Router>
+    
+    {/* <App /> */}
+    {/* <Home/> */}
+   
+   
   </React.StrictMode>,
   document.getElementById('root')
 );
